@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joé-Nestor Mintonwanou Araba | Data Scientist & IA Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0047AB;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #0047AB;
+            margin-bottom: 10px;
+            animation: 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #0047AB, 0 0 20px #0047AB;
+            }
+            to {
+                text-shadow: 0 0 20px #0047AB, 0 0 30px #0047AB;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            border-radius: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .objective {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #2563eb;
+            animation: fadeInLeft 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #0047AB;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #6b7280;
+            padding-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .skill-category h3 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .experience-item, .education-item, .project-item {
+            background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #2563eb;
+        }
+
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.3em;
+            color: #0047AB;
+            font-weight: bold;
+        }
+
+        .item-company {
+            color: #4b5563;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .item-location {
+            color: #666;
+            font-style: italic;
+        }
+
+        .item-date {
+            color: #888;
+            font-weight: 600;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .item-description {
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+
+        .item-description ul {
+            margin-left: 20px;
+        }
+
+        .item-description li {
+            margin-bottom: 8px;
+        }
+
+        .tools {
+            margin-top: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            font-style: italic;
+            color: #1e40af;
+        }
+
+        .passions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .passion-item {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .passion-item:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Joé Araba</h1>
+            <p class="subtitle">Data Scientist</p>
+            <div class="contact-info">
+                <div class="contact-item">📧 nestoraraba@gmail.com</div>
+                <div class="contact-item">📱 +212 (0)6 24 38 25 53</div>
+                <div class="contact-item">📍 Casablanca, Maroc</div>
+                <div class="contact-item">🔗 LinkedIn</div>
+            </div>
+        </header>
+
+        <div class="objective pulse">
+            <strong>🎯 Objectif :</strong> À la recherche d'un stage de fin d'études (PFE) de 6 mois en Data Science / IA Engineering à partir du 02 mars 2026.
+        </div>
+
+        <section class="section">
+            <h2>💼 Expériences Professionnelles</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Data Scientist</div>
+                        <div class="item-company">Forvis Mazars - Projet</div>
+                        <div class="item-location">Casablanca, Maroc</div>
+                    </div>
+                    <div class="item-date">Nov. 2025 – En cours</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Mise en place d'un système d'ATS (Applicant Tracking System)</li>
+                        <li>Structuration de CV par rubriques, enrichissement sémantique et production de profils exploitables via dashboards interactifs</li>
+                    </ul>
+                    <div class="tools">🛠️ Outils : Clustering, LLM, PowerBI</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Ingénieur IA</div>
+                        <div class="item-company">Brain Analytics Technologies - Stage</div>
+                        <div class="item-location">Lens, France</div>
+                    </div>
+                    <div class="item-date">Mar. 2025 – Sep. 2025</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Développement d'un système multi-agents (LLM et VLM) pour automatiser le nettoyage et la restructuration de données, générant des fiches techniques de véhicules Mazda</li>
+                        <li>Conception d'une architecture RAG from scratch avec des modèles VLM pour fournir des réponses contextuelles aux demandes clients avec une bonne précision en un temps optimal pour assister les SAV Hyundai</li>
+                    </ul>
+                    <div class="tools">🛠️ Outils : LLM, VLM, Reranker, Milvus, Pandas</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Data Scientist</div>
+                        <div class="item-company">Bayer - Projet</div>
+                        <div class="item-location">Lille, France</div>
+                    </div>
+                    <div class="item-date">Nov. 2024 – Jan. 2025</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Développement d'un agent conversationnel basé sur un système de RAG (Génération augmentée de récupération) assistant les ophtalmologues</li>
+                    </ul>
+                    <div class="tools">🛠️ Outils : Ubuntu, LlamaCpp, Docling, Qdrant, FastAPI, Streamlit</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Data Scientist</div>
+                        <div class="item-company">Prestige Digital Solutions - Stage</div>
+                        <div class="item-location">Témara, Maroc</div>
+                    </div>
+                    <div class="item-date">Mai 2024 – Sep. 2024</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Traitement des données textuelles issues de réclamations bancaires pour un système utilisant l'IA Générative avec le Traitement du Langage Naturel (NLP)</li>
+                    </ul>
+                    <div class="tools">🛠️ Outils : DBSCAN, K-Means, Clustering, NLTK</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎓 Formation</h2>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Cycle Ingénieur - Science des données et Digitalisation (Bac+5)</div>
+                        <div class="item-company">École Centrale Casablanca</div>
+                    </div>
+                    <div class="item-date">Sep. 2022 – Présent</div>
+                </div>
+                <div class="item-description">
+                    <p><strong>Matières :</strong> Machine Learning, Transformation Digitale, Data Engineering, Modélisation des process, Aide à la décision multicritères, NLP, Marketing Digital, MLOPS</p>
+                    <p style="margin-top: 10px;">🏆 <strong>Prix du meilleur Poster</strong></p>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Césure Académique - Formation Diplomante</div>
+                        <div class="item-company">Digital Lab | École Centrale de Lille</div>
+                    </div>
+                    <div class="item-date">Sep. 2024 – Mar. 2025</div>
+                </div>
+                <div class="item-description">
+                    <p><strong>Matières :</strong> Intelligence Artificielle, Design Thinking, Gestion de Projet, Transformation Digitale</p>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Licence en Mathématiques</div>
+                        <div class="item-company">Institut des Mathématiques et Sciences Physiques</div>
+                    </div>
+                    <div class="item-date">Sep. 2021 – Août 2022</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Classes Préparatoires aux Grandes Écoles</div>
+                        <div class="item-company">Institut des Mathématiques et Sciences Physiques</div>
+                    </div>
+                    <div class="item-date">Nov. 2019 – Jul. 2021</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🚀 Projets Académiques</h2>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Détection d'anomalies - Consommation énergétique</div>
+                        <div class="item-company">École Centrale Casablanca</div>
+                    </div>
+                    <div class="item-date">Oct. 2025 – En cours</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Mise en œuvre de réseaux de neurones non supervisés (AutoEncodeur) pour apprendre la structure normale de données énergétiques et détecter les comportements anormaux</li>
+                    </ul>
+                    <div class="tools">🛠️ Outils : Pytorch, K-Means, HDBSCAN, SVM, Streamlit</div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Poubelle Intelligente</div>
+                        <div class="item-company">École Centrale Casablanca</div>
+                    </div>
+                    <div class="item-date">Sep. 2022 – Jul. 2023</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Conception d'une poubelle intelligente pour le tri de déchets : Plastique, Métal, Papier</li>
+                    </ul>
+                    <div class="tools">🛠️ Outils : Raspberry Pi, TensorFlow, Computer Vision</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🛠️ Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>💻 Outils Informatiques</h3>
+                    <p>Python, Scikit-Learn, TensorFlow, SQL, PowerBI, MATLAB/Simulink, Octave, Databricks, Linux, Streamlit/Chainlit, Git, Flask, Camunda, Bonita</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🌐 Langues</h3>
+                    <p><strong>Français :</strong> Langue native<br>
+                    <strong>Anglais :</strong> Courant</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🎯 Compétences Transversales</h3>
+                    <p>Esprit critique, Sens du service, Rigueur, Autonomie, Agilité</p>
+                </div>
+                <div class="skill-category">
+                    <h3>📜 Certifications</h3>
+                    <p>• Machine Learning with Python (Coursera | IBM)<br>
+                    • Google Project Management (Coursera | Google)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎨 Passions</h2>
+            <div class="passions">
+                <div class="passion-item">🏀 Basketball</div>
+                <div class="passion-item">🏸 Badminton</div>
+                <div class="passion-item">🎨 Dessin (Portraits)</div>
+                <div class="passion-item">🎵 Musique classique et oldies</div>
+                <div class="passion-item">📚 Littérature africaine</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>✨ Disponible pour un stage de 6 mois à partir de mars 2026 ✨</p>
+        </footer>
+    </div>
+</body>
+</html>
